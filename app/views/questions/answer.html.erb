@@ -1,2 +1,20 @@
-<h1>Questions#answer</h1>
-<p>Find me in app/views/questions/answer.html.erb</p>
+<div class="center-container">
+  <h2> Stupid Couching </h2>
+  <p><%= params[:question].capitalize! %></p>
+  <p>-- You</p>
+
+  <br>
+
+  <% if params[:question] == "I am going to work" %>
+    <p>Great!</p>
+  <% elsif params[:question].match(/.*\?/) %>
+    <p>Silly question, get dressed and go to work!</p>
+  <% else %>
+    <p>I don't care, get dressed and go to work!</p>
+  <% end %>
+
+  <p>-- Coach</p>
+  <br>
+
+  <%= link_to "Ask another question", ask_path %>
+</div>
